@@ -1,0 +1,158 @@
+ <RelativeLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:paddingLeft="@dimen/activity_horizontal_margin"
+     android:paddingRight="@dimen/activity_horizontal_margin"
+     android:paddingTop="@dimen/activity_vertical_margin"
+     android:background="@android:color/holo_blue_light"
+
+     android:paddingBottom="@dimen/activity_vertical_margin"
+     tools:context="br.com.tdm.ConverterMoeda.MainActivity">
+
+     <TextView
+            android:id="@+id/txfld_titulo"
+            android:text="Converte para moeda do País visitado"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffedff0c" />
+
+     <TextView
+            android:id="@+id/txtV_moeda"
+            android:text="Nome da moeda:"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFF7"
+            android:layout_below="@+id/txfld_titulo"
+            android:layout_marginTop="5dp"
+            />
+
+     <EditText
+            android:id="@+id/edt_moeda"
+            android:textSize="15sp"
+            android:hint="no País visitado"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:height="12dp"
+            android:textColor="#ff4636ff"
+            android:background="#fffffffb"
+            android:enabled="true"
+            android:layout_alignBaseline="@id/txtV_moeda"
+            android:layout_marginLeft="146dp"/>
+
+     <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="29dp"
+            android:id="@+id/btn_editMoeda"
+            android:visibility="invisible"
+            android:layout_alignBaseline="@id/txfld_titulo"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:drawable/ic_menu_edit" />
+
+        />
+
+     <TextView
+            android:id="@+id/txfld_cotacao"
+            android:text="Cotação na moeda:"
+            android:textSize="15sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFF7"
+            android:layout_below="@+id/txtV_moeda"
+            android:layout_marginTop="10dp"
+            />
+
+     <EditText
+            android:id="@+id/edt_cotacao"
+            android:text="0"
+            android:hint="no País visitado"
+            android:textSize="15sp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:height="12dp"
+            android:textColor="#ff4636ff"
+            android:background="#fffffffb"
+            android:layout_alignBaseline="@id/txfld_cotacao"
+            android:layout_marginTop="5dp"
+            android:enabled="true"
+            android:layout_marginLeft="150dp"/>
+
+     <ImageButton
+            android:layout_width="35dp"
+            android:layout_height="29dp"
+         android:visibility="invisible"
+            android:id="@+id/btn_editCotacao"
+            android:layout_alignBaseline="@id/txtV_moeda"
+            android:layout_marginLeft="270dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:drawable/ic_menu_edit" />
+
+        />
+
+     <TextView
+            android:id="@+id/txfld_qtde"
+            android:text="Valor da compra"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFF7"
+            android:layout_below="@+id/txfld_cotacao"
+            android:layout_marginTop="15dp"
+            />
+
+     <EditText
+            android:id="@+id/edt_qtde"
+            android:textSize="30sp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:height="12dp"
+            android:textColor="#ff4636ff"
+            android:background="#fffffffb"
+            android:layout_below="@+id/txfld_qtde"
+            android:layout_marginTop="5dp"
+                  />
+     <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="34dp"
+            android:id="@+id/btn_calcular"
+            android:layout_alignBaseline="@id/txfld_qtde"
+            android:layout_marginLeft="230dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/ok" />
+
+        />
+
+     <TextView
+            android:id="@+id/txfld_moedareais"
+            android:text="Valor em Reais:"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFF7"
+            android:layout_below="@+id/edt_qtde"
+            android:layout_marginTop="5dp"
+             />
+     <TextView
+            android:id="@+id/txfld_valorreais"
+            android:text="0.00"
+            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFF7"
+            android:layout_below="@+id/txfld_moedareais"
+            android:layout_marginTop="5dp"
+            android:textIsSelectable="true"
+            android:background="@android:color/holo_orange_light" />
+
+
+</RelativeLayout>
+
+
