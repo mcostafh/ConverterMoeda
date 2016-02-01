@@ -18,11 +18,11 @@ ADDED from AndroidManifest.xml:5:5
 MERGED from com.android.support:appcompat-v7:21.0.3:16:5
 MERGED from com.android.support:support-v4:21.0.3:16:5
 	android:label
-		ADDED from AndroidManifest.xml:7:9
+		ADDED from AndroidManifest.xml:8:9
 	android:allowBackup
 		ADDED from AndroidManifest.xml:6:9
 	android:icon
-		ADDED from AndroidManifest.xml:8:9
+		ADDED from AndroidManifest.xml:7:9
 	android:theme
 		ADDED from AndroidManifest.xml:9:9
 activity#br.com.tdm.convertermoeda.MainActivity
@@ -41,6 +41,12 @@ category#android.intent.category.LAUNCHER
 ADDED from AndroidManifest.xml:16:17
 	android:name
 		ADDED from AndroidManifest.xml:16:27
+activity#br.com.tdm.convertermoeda.Calcular
+ADDED from AndroidManifest.xml:19:9
+	android:label
+		ADDED from AndroidManifest.xml:21:13
+	android:name
+		ADDED from AndroidManifest.xml:20:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

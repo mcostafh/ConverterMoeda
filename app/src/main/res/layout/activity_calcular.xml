@@ -12,120 +12,86 @@
 
     <TextView
         android:id="@+id/txfld_titulo"
-        android:text="Calcular cotação da moeda"
+        android:text="Dados para o cálculo da cotação"
         android:textSize="20sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="#ffedff0c" />
 
-    <TextView
-        android:id="@+id/txtV_moedaOrigem"
-        android:text="Nome da Moeda origem:"
-        android:textSize="15sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFFF7"
-        android:layout_below="@id/txfld_titulo"
-         />
-
-    <EditText
-        android:id="@+id/edt_moedaOrigem"
-        android:text="Reais"
-        android:textSize="15sp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:hint="nome da moeda origem"
-        android:inputType="text"
-        android:height="12dp"
-        android:textColor="#ff4636ff"
-        android:background="#fffffffb"
-        android:enabled="true"
-        android:layout_alignBaseline="@id/txtV_moedaOrigem"
-        android:layout_marginLeft="180dp"
-        />
-
-
-    <TextView
-        android:id="@+id/txtV_VrMoedaOrigem"
-        android:text="Valor na Moeda origem:"
-        android:textSize="15sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFFF7"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/txtV_moedaOrigem"
-         />
-
     <EditText
         android:id="@+id/edt_vrMoedaOrigem"
         android:text="1"
         android:textSize="15sp"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:height="12dp"
-        android:textColor="#ff4636ff"
-        android:background="#fffffffb"
-        android:layout_marginLeft="180dp"
-        android:layout_alignBaseline="@id/txtV_VrMoedaOrigem"
-        />
-
-
-
-
-
-    <TextView
-        android:id="@+id/txtV_moedaDestino"
-        android:text="Nome da moeda destino:"
-        android:textSize="15sp"
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFFF7"
-        android:layout_below="@id/txtV_VrMoedaOrigem"
-        />
-
-    <EditText
-        android:id="@+id/edt_moedaDestino"
-        android:text="   "
-        android:textSize="15sp"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:hint="nome da moeda destino"
-        android:inputType="text"
-        android:height="12dp"
-        android:textColor="#ff4636ff"
-        android:background="#fffffffb"
-        android:enabled="true"
-        android:layout_alignBaseline="@id/txtV_moedaDestino"
-        android:layout_marginLeft="180dp"
-        />
-
-
-    <TextView
-        android:id="@+id/txtV_VrMoedaDestino"
-        android:text="Valor na Moeda destino:"
-        android:textSize="15sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFFF7"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/txtV_moedaDestino"
-        />
-
-    <EditText
-        android:id="@+id/edt_vrMoedaDestino"
-        android:text=""
-        android:textSize="15sp"
-        android:layout_width="70dp"
+        android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:height="12dp"
         android:textColor="#ff4636ff"
         android:background="#fffffffb"
-        android:layout_marginLeft="180dp"
-        android:layout_alignBaseline="@id/txtV_VrMoedaDestino"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/txfld_titulo"
         />
+
+
+    <EditText
+        android:id="@+id/edt_moedaOrigem"
+        android:text="Real"
+        android:textSize="15sp"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:hint="Real"
+        android:inputType="text"
+        android:height="12dp"
+        android:textColor="#ff4636ff"
+        android:background="#fffffffb"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="55dp"
+        android:layout_alignBaseline="@id/edt_vrMoedaOrigem"
+        />
+
+
+    <TextView
+        android:id="@+id/txtV_igual"
+        android:text="="
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFFF7"
+        android:layout_marginLeft="130dp"
+        android:layout_alignBaseline="@id/edt_vrMoedaOrigem"
+        />
+
+    <EditText
+        android:id="@+id/edt_vrMoedaDestino"
+        android:textSize="15sp"
+        android:layout_width="65dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:height="12dp"
+        android:hint="Quantos"
+        android:focusable="true"
+        android:textColor="#ff4636ff"
+        android:background="#fffffffb"
+        android:layout_marginLeft="150dp"
+        android:layout_alignBaseline="@id/edt_vrMoedaOrigem"
+        />
+
+
+    <EditText
+        android:id="@+id/edt_moedaDestino"
+        android:textSize="15sp"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:hint="Destino"
+        android:inputType="text"
+        android:height="12dp"
+        android:textColor="#ff4636ff"
+        android:background="#fffffffb"
+        android:layout_alignBaseline="@id/edt_vrMoedaOrigem"
+        android:layout_marginLeft="240dp"
+        />
+
+
 
 
     <Button
@@ -134,7 +100,9 @@
         android:text="Calcular cotação"
         android:id="@+id/btn_calcular"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/txtV_VrMoedaDestino" />
+        android:background="@android:color/holo_blue_light"
+        android:textColor="#ffedff0c"
+        android:layout_below="@id/edt_vrMoedaOrigem" />
 
 
 

@@ -1,5 +1,6 @@
 package br.com.tdm.convertermoeda;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigDecimal;
 
@@ -24,7 +26,7 @@ public class Calcular extends ActionBarActivity {
 
     private Float vrNaMoedaOrigem;
     private Float vrNaMoedaDestino;
-    private BigDecimal cotacao;
+    private Float cotacao;
     private String moedaDestino;
     private String moedaOrigem;
 
@@ -64,10 +66,26 @@ public class Calcular extends ActionBarActivity {
                 vrNaMoedaOrigem = Float.parseFloat( edtVrMoedaOrigem.getText().toString());
                 vrNaMoedaDestino = Float.parseFloat( edtVrMoedaDestino.getText().toString());
 
-                cotacao = round( vrNaMoedaOrigem / vrNaMoedaDestino,4);
+                cotacao =  round( vrNaMoedaOrigem / vrNaMoedaDestino,4);
 
                 txvCotacao.setText( String.valueOf(cotacao ));
 
+                // salvando dados
+                SharedPreferences.Editor editor = arqDeDadosDaCotacao.edit();
+
+                if (  cotacao>0.00 ) {
+                    editor.putFloat("cotacao", cotacao);
+                }
+                if (moedaDestino != null ) {
+                    editor.putString("moedaDestino", moedaDestino);
+                }
+                if (moedaOrigem != null ) {
+                    editor.putString("moedaOrigem", moedaOrigem);
+                }
+                editor.commit();
+
+
+                mensagem("Cálculo realizado!");
 
             }
         });
@@ -75,10 +93,20 @@ public class Calcular extends ActionBarActivity {
 
     }
 
-    private BigDecimal round( Float reais, Integer casasDecimais) {
+    private Float round( Float reais, Integer casasDecimais) {
         BigDecimal big = new BigDecimal(reais);
         big = big.setScale(casasDecimais, BigDecimal.ROUND_HALF_EVEN);
-        return big;
+        return big.floatValue();
+    }
+
+    private void mensagem(String mensagem){
+
+        Context contexto = getApplicationContext();
+        int duracao = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(contexto, mensagem,duracao);
+        toast.show();
+
     }
 
     @Override

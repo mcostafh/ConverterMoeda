@@ -43,31 +43,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        arqDeDadosDaCotacao = getSharedPreferences(NOME_FILE, MODE_PRIVATE);
-
-        cotacao =  arqDeDadosDaCotacao.getFloat("cotacao",0) ;
-        moeda = arqDeDadosDaCotacao.getString("moedaDestino","");
-        edt_qtde = (EditText) findViewById(R.id.edt_qtde);
-
-        edt_cotacao = (EditText) findViewById(R.id.edt_cotacao);
-        if (cotacao > 0) {
-            edt_cotacao.setText(cotacao+"");
-        }else{
-            edt_cotacao.setHint("em "+moeda);
-        }
-
-        if (!moeda.equals("") ) {
-            edt_moeda = (EditText) findViewById(R.id.edt_moeda);
-            edt_moeda.setText(moeda);
-        }
-
-
-
-        // setando o focus
-        edt_qtde.findFocus();
-        edt_qtde.setFocusable(true);
-        edt_qtde.setHint("em "+moeda);
-
 
 
         // botão edit moeda
@@ -157,6 +132,38 @@ public class MainActivity extends ActionBarActivity {
             editor.putString("moedaDestino", moeda);
         }
         editor.commit();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        arqDeDadosDaCotacao = getSharedPreferences(NOME_FILE, MODE_PRIVATE);
+
+        cotacao =  arqDeDadosDaCotacao.getFloat("cotacao",0) ;
+        moeda = arqDeDadosDaCotacao.getString("moedaDestino","");
+        edt_qtde = (EditText) findViewById(R.id.edt_qtde);
+
+        edt_cotacao = (EditText) findViewById(R.id.edt_cotacao);
+        if (cotacao > 0) {
+            edt_cotacao.setText(cotacao+"");
+        }else{
+            edt_cotacao.setHint("em "+moeda);
+        }
+
+        if (!moeda.equals("") ) {
+            edt_moeda = (EditText) findViewById(R.id.edt_moeda);
+            edt_moeda.setText(moeda);
+        }
+
+
+
+        // setando o focus
+        edt_qtde.findFocus();
+        edt_qtde.setFocusable(true);
+        edt_qtde.setHint("em "+moeda);
+
 
     }
 
